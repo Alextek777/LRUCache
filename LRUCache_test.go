@@ -213,6 +213,10 @@ func TestClearExpired(t *testing.T) {
 
 	cache.Push(3, "three") // This should clear expired items
 
+	if cache.Len() != 1 {
+		t.Error("Expected all keys except of 3 to be expired")
+	}
+
 	_, ok := cache.Get(1)
 	if ok {
 		t.Error("Expected key 1 to be expired")

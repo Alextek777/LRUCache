@@ -124,6 +124,13 @@ func (s *LRUCache[K, V]) Get(key K) (V, bool) {
 
 }
 
+func (s *LRUCache[K, V]) Len() int {
+	s.mu.RLock()
+	defer s.mu.RUnlock()
+
+	return s.ttlList.Len()
+}
+
 func (s *LRUCache[K, V]) unsafeClear() {
 	e := s.ttlList.Front()
 	for e != nil {
