@@ -25,7 +25,6 @@ import (
 )
 
 func main() {
-
 	cache := LRUCache.New[int, string](2, time.Minute)
 
 	cache.Push(1, "one")

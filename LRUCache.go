@@ -125,7 +125,8 @@ func (s *LRUCache[K, V]) Get(key K) (V, bool) {
 }
 
 func (s *LRUCache[K, V]) unsafeClear() {
-	for e := s.ttlList.Front(); e != nil; e = e.Next() {
+	e := s.ttlList.Front()
+	for e != nil {
 		item, ok := e.Value.(*listItem[K])
 		if !ok {
 			fmt.Println("LRUCache error! Could not cast to listItem on unsafeClear")
@@ -133,8 +134,12 @@ func (s *LRUCache[K, V]) unsafeClear() {
 		}
 
 		if item.isExpired() {
+			next := e.Next()
+
 			delete(s.cache, item.Key)
 			s.ttlList.Remove(e)
+
+			e = next
 			continue
 		}
 
