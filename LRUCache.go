@@ -121,7 +121,6 @@ func (s *LRUCache[K, V]) Get(key K) (V, bool) {
 
 	s.mu.Unlock()
 	return value, true
-
 }
 
 func (s *LRUCache[K, V]) Len() int {
