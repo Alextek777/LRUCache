@@ -48,19 +48,20 @@ func main() {
 	fmt.Println("found value: ", v)
 	cache.Remove(4)
 
+	cache.Push(5, "five")
+
 	cache.Display()
 }
 ```
 
 ### Output
 ```text
+found value:  four
 LRUCache
-Key:  2  Value:  two
-Key:  3  Value:  three
+Key:  5  Value:  five
 
 LRUCache TTL List
-Key:  2  TTL :  2025-04-25 10:28:23.04043588 +0300 MSK m=+60.000050486
-Key:  3  TTL :  2025-04-25 10:28:23.040436962 +0300 MSK m=+60.000051568
+Key:  5  TTL :  2025-04-25 10:53:39.486309118 +0300 MSK m=+3.001118842
 ```
 
 ```golang
