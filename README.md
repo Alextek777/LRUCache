@@ -1,8 +1,5 @@
 # Thread Safe LRUCache Implementation in Go
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/yourusername/yourrepo.svg)](https://pkg.go.dev/github.com/yourusername/yourrepo)
-[![Tests](https://github.com/yourusername/yourrepo/actions/workflows/tests.yml/badge.svg)](https://github.com/yourusername/yourrepo/actions/workflows/tests.yml)
-
 A thread-safe LRU (Least Recently Used) cache implementation in Go with TTL support.
 
 ## Features
