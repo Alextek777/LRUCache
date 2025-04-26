@@ -7,9 +7,6 @@ A thread-safe LRU (Least Recently Used) cache implementation in Go with TTL supp
 
 ## Features
 
-- Get operation speed complexity avg O(1) worst case O(N)
-- Remove Operation speed complexity avg O(1) worst case O(N)
-- Insert Operation speed complexity avg O(1) worst case O(N)
 - 🚀 Thread-safe operations using sync.RWMutex
 - ⏳ Time-based eviction (TTL)
 - 📏 Size-based eviction (LRU)
